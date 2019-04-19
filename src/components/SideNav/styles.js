@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Menu = styled.div`
+export const Wrapper = styled.div`
     height: 100%;
     min-width: 210px;
     background: #fff;
@@ -13,11 +13,11 @@ export const Menu = styled.div`
 export const SubItem = styled.ul`
     list-style: none;
     margin-left: 200px;
-    margin-top: -20px;
+
     z-index: 1;
     position: fixed;
     border: solid 1px red;
-    visibility: visible;
+    visibility: hidden;
 `;
 
 export const Item = styled.li`
@@ -32,14 +32,18 @@ export const Item = styled.li`
             width: 20px;
             border: 1px solid;
         }
+
+    }
     &:hover{
         color: blue;
         ${SubItem} {
             color: red;
             border: solid 1px green;
+            visibility: visible;
+            margin-top: ${props => props.first ? '-20px' : '0px'};
+
 
         }
-    }
   }
 
 `;
