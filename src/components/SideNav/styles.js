@@ -5,19 +5,35 @@ export const Wrapper = styled.div`
     min-width: 210px;
     background: #fff;
     border-radius: 5px;
-    margin-right: 10px;
-    padding-left: 20px;
+    margin-right: 20px;
     box-shadow: 2px 2px 9px -8px #000000;
     list-style: none;
 `;
-export const SubItem = styled.ul`
-    list-style: none;
-    margin-left: 200px;
 
+export const List = styled.div`
+border: solid 1px pink;
+padding: 0 20px 0 10px;
+`
+export const SubItem = styled.ul`
+    margin-left: 182px;
+    width: 200px;
+    border-radius: 3px;
+    list-style: none;
+    background: #428dc9;
+    color: #fff;
     z-index: 1;
     position: fixed;
-    border: solid 1px red;
     visibility: hidden;
+    transition:all .2s ease;
+
+    li{
+        margin-top: 5px;
+        padding: 5px 8px;
+    a{
+        color: #fff;
+        text-decoration: none;
+    }
+    }
 `;
 
 export const Item = styled.li`
@@ -28,19 +44,24 @@ export const Item = styled.li`
         text-decoration: none;
         color: #000;
         div {
-            height: 20px;
-            width: 20px;
-            border: 1px solid;
+            height: 10px;
+            width: 10px;
+            border-radius:1px;
+            border: 1px solid #428dc9;
+        }
+        &:hover{
+            color: #fff;
+            div{
+                background: #428dc9;
+            }
         }
 
     }
     &:hover{
-        color: blue;
+
         ${SubItem} {
-            color: red;
-            border: solid 1px green;
             visibility: visible;
-            margin-top: ${props => props.first ? '-20px' : '0px'};
+            margin-top: ${props => props.first ? '-27px' : '-8px'};
 
 
         }
